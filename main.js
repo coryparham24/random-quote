@@ -1,0 +1,26 @@
+$(document).ready(function() {
+	var quotes = ["There is no joy in a life that is all information. There is no 'juice' to that kind of life. No sweetness, no color. Like trading a beautiful golden-ripe orange for a stalk of whithered broccoli.",	"The history of the Victorian Age will never be written: we know too much about it. For ignorance is the first requisite of the historian - ignorance, which simplifies and clarifies, which selects and omits, with a placid perfection unattainable by the highest art.",	"Violence is the last refuge of the incompetent.",	"Creativity represents a miraculous coming together of the uninhibited energy of the child with its apparent opposite and enemy, the sense of order imposed on the disciplined adult intelligence.",	"The major difference between a thing that might go wrong and a thing that cannot possibly go wrong is that when a thing that cannot possibly go wrong goes wrong it usually turns out to be impossible to get at and repair.",	"We can't take any credit for our talents. It's how we use them that counts.",	"Marriage is a bargain, and somebody has to get the worst of the bargain.",	"Whom the gods would destroy, they first make mad.",	"Comedy is simply a funny way of being serious.",	"Crying is the refuge of plain women, but the ruin of pretty ones.",	"Merrily, merrily shall I live now, Under the blossom that hangs on the bough.",	"Our deeds determine us, as much as we determine our deeds.",	"Laughter is the sun that drives winter from the human face.",	"Our cause is noble; it is the cause of mankind!",	"People only see what they are prepared to see.",	"In order to fully realize how bad a popular play can be, it is necessary to see it twice.",	"Few men have virtue to withstand the highest bidder.",	"Once harm has been done, even a fool understands it.",	"The hardest thing when you think about focusing. You think focusing is about saying 'Yes.'' No. Focusing is about saying 'No.'' And when you say 'No,'' you piss off people.",	"Democracy means that anyone can grow up to be president, and anyone who doesn't grow up can be vice president.",	"Laws do not persuade just because they threaten.",	"Music with dinner is an insult both to the cook and the violinist.",	"Well, all I know is what I read in the papers.",	"There's no trick to being a humorist when you have the whole government working for you.",	"The most incomprehensible thing about the world is that it is comprehensible.",	"Those who are fond of settling things to rights have no great objection to seeing them wrong.",	"A hit, a very palpable hit.",	"Hatred - The anger of the weak.",	"Getting there isn't half the fun - it's all the fun.",	"Everything is a drug. Family, art, causes, new shoes... We're all just tweaking our chem to avoid the void.",	"She makes me love her and I like people who make me love them. It saves me so much trouble in making myself love them."];
+	var authors = ["Tish Grier, love and sex and dreams, 04-15-06",	"Lytton Strachey (1880 - 1932), Eminent Victorians (1918)",	"Isaac Asimov (1920 - 1992), Salvor Hardin in 'Foundation'",	"Norman Podhoretz",	"Douglas Adams (1952 - 2001), 'Mostly Harmless'",	"Madeleine L'Engle (1918 - )",	"Helen Rowland (1876 - 1950)",	"Euripides (484 BC - 406 BC)",	"Peter Ustinov (1921 - 2004)",	"Oscar Wilde (1854 - 1900), Lady Windemere's Fan",	"William Shakespeare (1564 - 1616), 'The Tempest', Act 5 scene 1",	"George Eliot (1819 – 1880)",	"Victor Hugo (1802 - 1885)",	"George Washington (1732 - 1799)",	"Ralph Waldo Emerson (1803 - 1882)",	"George Bernard Shaw (1856 - 1950)",	"George Washington (1732 - 1799)",	"Homer (800 BC - 700 BC), The Iliad",	"Steve Jobs (1955 - 2011), Apple WWDC Closing Keynote, 1997",	"Johnny Carson (1925 - 2005)",	"Seneca (5 BC - 65 AD)",	"G. K. Chesterton (1874 - 1936)",	"Will Rogers (1879 - 1935)",	"Will Rogers (1879 - 1935)",	"Albert Einstein (1879 - 1955)",	"William Hazlitt (1778 - 1830)",	"William Shakespeare (1564 - 1616), 'Hamlet', Act 5 scene 2",	"Alphonse Daulet",	"Robert Townsend",	"Joss Whedon, Twitter, 06-27-13",	"L. M. Montgomery (1874 - 1942), Anne of Green Gables, 1908"];
+	var randQuote = Math.floor(Math.random() * 30 + 1);
+
+	function newQuote() {
+		$("div.main").prepend("<div class='quote-div'></div>");
+		$("div.quote-div").append("<blockquote class='block'></blockquote>");
+		$("blockquote").text(quotes[randQuote]);
+		$("blockquote").append("<br><br><cite>" + authors[randQuote] + "</cite>");
+		var r = Math.floor(Math.random() * 256);
+		var g = Math.floor(Math.random() * 256);
+		var b = Math.floor(Math.random() * 256);
+		$("body").css('background-color', 'rgb(' + r + ',' + g + ',' + b + ')');
+		$("blockquote").css('color', 'rgb(' + r + ',' + g + ',' + b + ')');
+		$("button").css({'background-color': 'rgb(' + r + ',' + g + ',' + b + ')', 'color': 'white'});
+	};
+
+	newQuote();
+
+	$("#new-quote").on('click', function() {
+		location.reload();
+	});
+
+		$("#tweet").closest("a").attr('href', 'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' + encodeURIComponent('"' + quotes[randQuote] + '" - ' + authors[randQuote]));
+});

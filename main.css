@@ -1,0 +1,82 @@
+div.main {
+	width: 600px;
+	margin: 100px auto;
+	background-color: white;
+	text-align: center;
+}
+
+div.quote-div {
+	width: 100%;
+	margin: 0 auto;
+	border: none;
+	padding: 0 20px;
+	text-align: center;
+	vertical-align: center;
+	background-color: white;
+}
+
+div.buttons {
+	height: 100px;
+	padding: 10px 30px 0 30px;
+	vertical-align: bottom;
+}
+
+blockquote.block {
+	font-family: Georgia, serif;
+	font-size: 24px;
+	font-weight: 600;
+	font-style: italic;
+	width: 100%;
+	margin: 0 auto;
+	padding: 75px 40px;
+	border: none;
+	line-height: 1.45;
+	position: relative;
+	text-shadow:-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+blockquote:before {
+	font-family: Georgia, serif;
+	position: absolute;
+	font-size: 6em;
+	line-height: 1;
+	top: 0;
+	left: 0;
+	content: "\201C";
+}
+
+blockquote:after {
+  font-family: Georgia, serif;
+  position: absolute;
+  float:right;
+  font-size:6em;
+  line-height: 1;
+  right:0;
+  bottom:-0.5em;
+  content: "\201D";
+}
+
+blockquote cite {
+	font-size: 14px;
+	display: block;
+	margin-top: 5px;
+}
+ 
+blockquote cite:before {
+	content: "\2014 \2009";
+}
+
+button.btn {
+	margin: 15px auto;
+	position: relative;
+	bottom: -30px;
+	text-shadow:-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+button#new-quote {
+	float: right;
+}
+
+button#tweet {
+	float: left;
+}
